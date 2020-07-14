@@ -29,14 +29,14 @@ function generatePassword() {
     var confirmNumbers = confirm("Do you want numbers?");
     var confirmSpecial = confirm("Do you want special characters?");
 
-    if (confirmLowerCase===false && confirmUpperCase===false && confirmNumbers===false &&  confirmSpecial===false) {
-      alert('Please choose at least one.');
+    if (!confirmLowerCase && !confirmUpperCase && !confirmNumbers && !confirmSpecial) {
+      alert('You must select at least one criteria. Please try again');
     } else {
       var allChar = [];
-        if (confirmLowerCase ===true) allChar = allChar.concat(lowerCase);
-        if (confirmUpperCase ===true) allChar = allChar.concat(upperCase);
-        if (confirmNumbers===true) allChar = allChar.concat(numbers);
-        if (confirmSpecial===true) allChar = allChar.concat(special);
+      if (confirmLowerCase) allChar = allChar.concat(lowerCase);
+      if (confirmUpperCase) allChar = allChar.concat(upperCase);
+      if (confirmNumbers) allChar = allChar.concat(numbers);
+      if (confirmSpecial) allChar = allChar.concat(special);
 
       var password = "";
       for (var i = 1; i <= passwordLength; i++) {
